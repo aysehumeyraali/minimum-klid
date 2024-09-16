@@ -1,0 +1,17 @@
+import math
+
+def oklidMesafesi(nokta1, nokta2):
+    return math.sqrt((nokta2[0] - nokta1[0])**2 + (nokta2[1] - nokta1[1])**2)
+
+noktalar = [(1, 2), (3, 5), (6, 9), (2, 7), (5, 3)]
+
+mesafeler = []
+
+for i in range(len(noktalar)):
+    for j in range(i + 1, len(noktalar)):
+        mesafeler.append(oklidMesafesi(noktalar[i], noktalar[j]))
+
+min_mesafe = min(mesafeler)
+
+print(mesafeler)
+print("En küçük mesafe:", min_mesafe)
